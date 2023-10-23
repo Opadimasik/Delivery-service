@@ -1,0 +1,54 @@
+# Игнорировать временные файлы и папки
+.vscode/
+node_modules/
+*.log
+npm-debug.log*
+
+# Игнорировать конфигурационные файлы
+.env
+config.js
+config.json
+
+# Игнорировать зависимости
+package-lock.json
+yarn.lock
+
+# Игнорировать локальные настройки
+.editorconfig
+.eslintrc
+.prettierignore
+.prettierrc
+
+# Игнорировать файлы сборки
+/build/
+/dist/
+
+# Игнорировать локальные базы данных и файлы данных
+.db.sqlite
+/data/
+
+# Игнорировать файлы миграций
+/migrations/
+
+# Игнорировать логи сервера и ошибок
+/logs/
+error.log
+
+# Игнорировать файлы, созданные во время разработки
+/.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Игнорировать сгенерированные файлы
+/public/uploads/
+
+# Игнорировать временные файлы HTML
+*.html~
+
+# Игнорировать временные файлы CSS
+*.css~
+
+# Игнорировать файлы Bootstrap, если они включены локально
+/bootstrap/
