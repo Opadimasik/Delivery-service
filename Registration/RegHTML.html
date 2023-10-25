@@ -84,17 +84,16 @@
           <input type="date" class="form-control" id="birthday" required>
         </div>
 
-        <!-- Адрес -->
-        <div class="form-group">
-          <label for="address">Адрес</label>
-          <select class="form-control" id="address" required>
-            <option value="">Субъект РФ</option>
-            <!-- Добавить элементы субъектов РФ здесь -->
+        
+        <label for="adress">Адрес проживания</label>
+          <div id="address-section-main" class="container mt-1 border p-3">
+            
+            <label>Cубъект РФ</label>
+          <select class="form-select mb-1" disabled >
+            <option selected>Томская область</option>
           </select>
-        </div>
-        <div class="form-group" id="address-element">
-          <!-- Этот блок будет динамически меняться -->
-        </div>
+          </div>
+          
 
         <!-- Email -->
         <div class="form-group">
@@ -128,5 +127,6 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js"></script>
     <script src="C:\Users\kfk55\.vscode\WebFront-Hits-frontend-project-1\Validation\phone.js"></script>
+    <script src="C:\Users\kfk55\.vscode\WebFront-Hits-frontend-project-1\Registration\adressScript.js"></script>
   </body>
 </html>
