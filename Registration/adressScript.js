@@ -1,7 +1,4 @@
 
-function getObjectGuid() {
-    return objectGuid1;
-}
 document.addEventListener('DOMContentLoaded', function () {
 	const apiEndpoint = 'https://food-delivery.kreosoft.ru/api/address/search';
 	const appendPoint = document.getElementById('address-section-main')
