@@ -31,13 +31,14 @@ authorizationLoginButton.addEventListener("click", (event) => {
   fetch("https://food-delivery.kreosoft.ru/api/account/login", options)
     .then((response) => {
       if (response.status === 200) {
-        // Извлечение токена из JSON-ответа
+        response.json() // Преобразование ответа в JSON
+        .then(data => {
         const authToken = data.token;
-        
         document.cookie = "token=" + authToken;
-        
+        console.log(authToken);
         // Дополнительные действия после успешной авторизации
         console.log("Успешная авторизация");
+      });
       } else if (response.status === 400) {
         // Неуспешная авторизация, здесь можно обработать ошибку
         console.log("Неуспешная авторизация");
