@@ -5,14 +5,14 @@ const phoneInput = document.getElementById("phone");
 const birthdayInput = document.getElementById("birthday");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
-const address = localStorage.getItem("objectGuid1");
+//const address = window.objectGuid1;
 const registerButton = document.getElementById("submitForRegistr");
-console.log(address);
+//console.log(address);
 // Обработчик отправки формы
 registerButton.addEventListener("click", (event) => {
   event.preventDefault(); // Предотвращение стандартной отправки формы
   console.log("SUBMIT");
-  console.log(address);
+  //console.log(address);
   // Получение значений из полей ввода
   const fullName = fullNameInput.value;
   const gender = Array.from(genderInputs).find((input) => input.checked).value;
@@ -20,7 +20,8 @@ registerButton.addEventListener("click", (event) => {
   const birthday = birthdayInput.value;
   const email = emailInput.value;
   const password = passwordInput.value;
-  const addressId = address;
+  const addressId = window.objectGuid1;
+  console.log(addressId);
   console.log(gender);
   console.log(birthday);
   console.log(fullName);

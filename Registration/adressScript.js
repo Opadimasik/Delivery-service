@@ -1,4 +1,7 @@
-let objectGuid1;
+
+function getObjectGuid() {
+    return objectGuid1;
+}
 document.addEventListener('DOMContentLoaded', function () {
 	const apiEndpoint = 'https://food-delivery.kreosoft.ru/api/address/search';
 	const appendPoint = document.getElementById('address-section-main')
@@ -48,8 +51,9 @@ document.addEventListener('DOMContentLoaded', function () {
 			appendSelect();
 		}
 		else{
-			objectGuid = currentObject["objectGuid"];
-  			localStorage.setItem("objectGuid1", objectGuid);
+			var objectGuid1 = currentObject["objectGuid"];
+			window.objectGuid1 = objectGuid1;
+			console.log(objectGuid1);
 		}
 		const currentSelect = document.getElementById(numberOfLevel);
 		currentSelect.addEventListener('change', () => {
@@ -78,8 +82,9 @@ document.addEventListener('DOMContentLoaded', function () {
 		})
 		if (currentObject["objectLevel"] === "Building")
 		{
-			const objectGuid = currentObject["objectGuid"];
-  			localStorage.setItem("objectGuid1", objectGuid);
+			var objectGuid1 = currentObject["objectGuid"];
+			window.objectGuid1 = objectGuid1;
+			console.log(objectGuid1);
 		}
 	}
 	buildForm();
