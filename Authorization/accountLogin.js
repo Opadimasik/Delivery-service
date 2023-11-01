@@ -34,8 +34,7 @@ authorizationLoginButton.addEventListener("click", (event) => {
         // Извлечение токена из JSON-ответа
         const authToken = data.token;
         
-        // Сохранение токена в локальном хранилище (или в куки, в зависимости от вашей архитектуры)
-        localStorage.setItem("token", authToken);
+        document.cookie = "token=" + authToken;
         
         // Дополнительные действия после успешной авторизации
         console.log("Успешная авторизация");
