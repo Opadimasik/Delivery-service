@@ -1,10 +1,10 @@
 // Элементы формы
-const emailField = document.getElementById('staticEmail');
-const fullNameField = document.getElementById('exampleFormControlInput1');
-const phoneField = document.getElementById('phone');
-const genderField = document.getElementById('staticGender');
-const birthdayField = document.getElementById('birthday');
-
+var emailField = document.getElementById('staticEmail');
+var fullNameField = document.getElementById('exampleFormControlInput1');
+var phoneField = document.getElementById('phone');
+var genderField = document.getElementById('staticGender');
+var birthdayField = document.getElementById('birthday');
+var address = document.getElementById('address-section-main');
 // Кнопка "Сохранить"
 const saveButton = document.getElementById('saveButton');
 data = 
@@ -36,6 +36,7 @@ function updateProfileData() {
         emailField.value = data.email;
         fullNameField.value = data.fullName;
         phoneField.value = data.phoneNumber;
+        address.value = data.address;
         if(data.gender === "Male")
         {
           genderField.value = "Мужской";
