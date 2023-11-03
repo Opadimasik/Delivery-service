@@ -5,7 +5,7 @@
 
 .stars {
     font-size: 24px; 
-    color: yellow; 
+    color: rgb(255, 149, 0); 
 }
 
 .stars::before {
@@ -19,5 +19,5 @@
     position: absolute;
     display: inline-block;
     overflow: hidden;
-    color: yellow; 
+    color: rgb(255, 149, 0); 
 }
