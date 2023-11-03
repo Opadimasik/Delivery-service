@@ -49,7 +49,53 @@
         </div>
       </div>
     </nav>
-    
+    <div class="container mt-4">
+      <div class="MainPhoto"></div>
+
+      <div class="row">
+        <div class="mt-4">
+          <label>Категории:</label>
+          <div id="categories">
+              <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input category-checkbox" value="Wok"> Wok
+              </label>
+              <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input category-checkbox" value="Pizza"> Pizza
+              </label>
+              <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input category-checkbox" value="Soup"> Soup
+              </label>
+              <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input category-checkbox" value="Dessert"> Dessert
+              </label>
+              <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input category-checkbox" value="Drink"> Drink
+              </label>
+          </div>
+      </div>
+        <div class="col-md-4">
+            <label for="vegetarian">Вегетарианское:</label>
+            <input id="vegetarian" type="checkbox" class="form-check-input" />
+        </div>
+        <div class="col-md-4">
+            <label for="sorting">Сортировка:</label>
+            <select id="sorting" class="form-control">
+                <option value="NameAsc">По имени (по возрастанию)</option>
+                <option value="NameDesc">По имени (по убыванию)</option>
+                <option value="PriceAsc">По цене (по возрастанию)</option>
+                <option value="PriceDesc">По цене (по убыванию)</option>
+                <option value="RatingAsc">По рейтингу (по возрастанию)</option>
+                <option value="RatingDesc">По рейтингу (по убыванию)</option>
+            </select>
+        </div>
+    </div>
+
+
+            <div class="container">
+        <h1>Меню доставки еды</h1>
+        <div id="menu"></div>
+        <ul id="pagination" class="pagination"></ul>
+    </div>
     
     <footer class="text-start text-lg-start bg-light text-muted footer-top-border">
       <div class="p-4" style="background-color: rgba(0, 0, 0, 0.05);">
@@ -62,9 +108,9 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.0/uuid.min.js"></script>
-    <script src="your-address-script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js"></script>
+    <script src="C:\Users\kfk55\.vscode\WebFront-Hits-frontend-project-1\Menu\menuScript.js"></script>
   </body>
 </html>
