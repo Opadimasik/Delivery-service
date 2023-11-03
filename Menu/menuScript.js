@@ -1,14 +1,4 @@
-function getStarRating(rating) {
-    let stars = '';
-    for (let i = 0; i < 10; i++) {
-        if (i < Math.floor(rating)) {
-            stars += '★';
-        } else {
-            stars += '☆';
-        }
-    }
-    return stars;
-}
+
 function fetchData(page) {
     const categories = Array.from(document.querySelectorAll('.category-checkbox:checked')).map(checkbox => checkbox.value);
     const vegetarian = document.querySelector('#vegetarian').checked;
@@ -53,6 +43,7 @@ function fetchData(page) {
                             <p class="card-text">Цена: $${dish.price}</p>
                             <p class="card-text">Категория: ${dish.category}</p>
                             <p class="card-text">Рейтинг: ${stars}</p>
+                            <a href="C:/Users/kfk55/.vscode/WebFront-Hits-frontend-project-1/Dish/dishHTML.html?id=${dish.id}" class="btn btn-primary">Подробнее</a>
                         </div>
                     </div>
                 </div>
@@ -95,5 +86,14 @@ document.querySelector('#sorting').addEventListener('change', updateMenu);
 document.querySelectorAll('.category-checkbox').forEach(function(checkbox) {
     checkbox.addEventListener('change', function() {
         updateMenu(); 
+    });
+});
+
+document.querySelectorAll('.card').forEach(img => {
+    img.addEventListener('click', function() {
+        console.log("Yra")
+        const card = img.closest('.card-body');
+        const productId = card.id;
+        window.location.href = `/Dish/dishHTML.html?id=${productId}`;
     });
 });

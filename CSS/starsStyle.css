@@ -1,0 +1,23 @@
+.star-rating {
+    display: inline-block;
+    font-size: 0;
+}
+
+.stars {
+    font-size: 24px; 
+    color: yellow; 
+}
+
+.stars::before {
+    content: '★★★★★';
+    position: absolute;
+    z-index: -1;
+    color: gray; 
+}
+
+.stars span {
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    color: yellow; 
+}
