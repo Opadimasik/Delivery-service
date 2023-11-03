@@ -1,0 +1,11 @@
+.position-relative {
+    position: relative;
+}
+
+.vegetarian-icon {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 40px;
+    z-index: 1;
+}

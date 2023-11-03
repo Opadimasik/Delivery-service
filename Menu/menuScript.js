@@ -35,21 +35,31 @@ function fetchData(page) {
         
         dishes.forEach(dish => {
             const stars = getStarRating(dish.rating);
+            const isVegetarian = dish.vegetarian;
+            const vegetarianIcon = isVegetarian
+                ? '<img src="C:/Users/kfk55/.vscode/WebFront-Hits-frontend-project-1/files/листочек.png" class="vegetarian-icon" >'
+                : '';
+        
             const card = `
-                <div class="card">
-                    <img src="${dish.image}" class="card-img-top" alt="${dish.name}">
-                    <div class="card-body">
-                        <h5 class="card-title">${dish.name}</h5>
-                        <p class="card-text">${dish.description}</p>
-                        <p class="card-text">Price: $${dish.price}</p>
-                        <p class="card-text">Category: ${dish.category}</p>
-                        <p class="card-text">Vegetarian: ${dish.vegetarian ? 'Yes' : 'No'}</p>
-                        <p class="card-text">Rating: ${stars}</p>
+                <div class="col-md-5 mb-3">
+                    <div class="card">
+                        <div class="position-relative">
+                            <img src="${dish.image}" class="card-img-top" alt="${dish.name}">
+                            ${isVegetarian ? vegetarianIcon : ''}
+                        </div>
+                        <div class="card-body" id="${dish.id}">
+                            <h5 class="card-title">${dish.name}</h5>
+                            <p class="card-text" style="font-size: 12px;">${dish.description}</p>
+                            <p class="card-text">Цена: $${dish.price}</p>
+                            <p class="card-text">Категория: ${dish.category}</p>
+                            <p class="card-text">Рейтинг: ${stars}</p>
+                        </div>
                     </div>
                 </div>
             `;
             $('#menu').append(card);
         });
+        
 
         
         for (let i = 1; i <= pagination.count; i++) {
