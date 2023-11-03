@@ -1,10 +1,4 @@
-data = 
-{
-  token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJhYmJjNWQ4YS1jYjU4LTRjMjYtOTA5ZC0wOGRiZDZhNzIxYjkiLCJuYW1lIjoibmFtZS5zdXJuYW1lQGRvbWFpbi5jb20iLCJlbWFpbCI6Im5hbWUuc3VybmFtZUBkb21haW4uY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvYXV0aGVudGljYXRpb24iOiIzNTJhY2ZlZi00NDUwLTRiNmYtYTcxNi02NzMwNmMwNjc1OGQiLCJuYmYiOjE2OTkwMjk2MjYsImV4cCI6MTY5OTAzMzIyNiwiaWF0IjoxNjk5MDI5NjI2LCJpc3MiOiJEZWxpdmVyeS5BcGkiLCJhdWQiOiJEZWxpdmVyeS5BcGkifQ.wJDfJzmsnGIkqfKYOSD_n3YXsa_qWeNxQLkmcao0KGg"
-}
-const url = "https://food-delivery.kreosoft.ru/api/order";
-const token = "Bearer " + data.token;
-const options = {
+const optionsPost = {
     method: "POST",
     headers: {
     "Content-Type": "application/json",
@@ -14,7 +8,24 @@ const options = {
 
 function updateStatusOrder(orderId)
 {
-    fetch(`https://food-delivery.kreosoft.ru/api/order/${orderId}/status`, options)
-    
+    fetch(`https://food-delivery.kreosoft.ru/api/order/${orderId}/status`, optionsPost)
+    .then((response) => {
+        if (response.status === 200) {
+          
+            console.log("Ok");
+        
+        } else if (response.status === 500) {
+          // Ошибка сервера с кодом 500
+          response.json().then((errorData) => {
+            console.error("Произошла ошибка сервера:", errorData.message);
+          });
+        } else if (response.status === 400){
+          console.log(response.json());
+        }
+      })
+      .catch((error) => {
+        // Обработка ошибки сети или других ошибок
+        console.error("Произошла ошибка:", error);
+      });
 
 }

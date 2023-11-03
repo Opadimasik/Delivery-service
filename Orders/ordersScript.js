@@ -19,7 +19,7 @@ function handleResponse(data) {
         row.innerHTML = `
             <td>${order.deliveryTime}</td>
             <td>Заказ от ${new Date(order.orderTime).toLocaleTimeString()}</td>
-            <td>${order.status}</td>
+            <td>${order.status === "InProcess" ? "В обработке" : "Доставлен"}</td>
             <td>${order.price}</td>
         `;
 
@@ -28,7 +28,10 @@ function handleResponse(data) {
             confirmButton.innerText = "Подтвердить доставку";
             confirmButton.classList.add("btn", "btn-primary");
             confirmButton.addEventListener("click", () => {
-                
+                updateStatusOrder(order.id);
+                row.removeChild(cell);
+                const statusCell = row.querySelector("td:nth-child(3)"); // Здесь 3 - номер столбца с статусом
+                statusCell.textContent = "Доставлен";
             });
 
             const cell = document.createElement("td");
