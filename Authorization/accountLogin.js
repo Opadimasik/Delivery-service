@@ -34,9 +34,10 @@ authorizationLoginButton.addEventListener("click", (event) => {
         response.json() // Преобразование ответа в JSON
         .then(data => {
         const authToken = data.token;
-        document.cookie = "token=" + authToken;
+        document.cookie = `token=${authToken}";`;
         console.log(authToken);
-        // Дополнительные действия после успешной авторизации
+        // действия после успешной авторизации
+        window.location.href = 'C:/Users/kfk55/.vscode/WebFront-Hits-frontend-project-1/Menu/menuHTML.html';
         console.log("Успешная авторизация");
       });
       } else if (response.status === 400) {

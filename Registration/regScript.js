@@ -54,7 +54,7 @@ registerButton.addEventListener("click", (event) => {
       if (response.status === 200) {
         response.json().then((data) => {
             const regToken = data.token;
-            document.cookie = "token=" + regToken;
+            document.cookie = `token=${authToken}";`;
             console.log("Успешная регистрация");
           });
       } else if (response.status === 500) {
