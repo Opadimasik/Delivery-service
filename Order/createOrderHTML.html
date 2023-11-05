@@ -11,7 +11,6 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="C:\Users\kfk55\.vscode\WebFront-Hits-frontend-project-1\Authorization\authorizationCSS.css">
     <title>Регистрация</title>
   </head>
 
@@ -44,12 +43,35 @@
           </ul>
       </div>
   </nav>
-    <div class="container">
-        <div class="row" id="product-container">
-            <!-- Карточки товаров будут созданы здесь -->
+  <div class="container">
+    <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
         </div>
-    </div>
-    
+      </div>
+      <div class="mb-3 row">
+        <label for="staticPhone" class="col-sm-2 col-form-label">Телефон</label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext" id="staticPhone" value="+79231432452">
+        </div>
+      </div>
+      <label for="adress">Адрес проживания</label>
+          <div id="address-section-main" class="container mt-1 border p-3">
+            
+            <label>Cубъект РФ</label>
+          <select class="form-select mb-1" disabled >
+            <option selected>Томская область</option>
+          </select>
+          </div>
+          <div class="container">
+            <div class="row" id="product-container">
+                <!-- Карточки товаров будут созданы здесь -->
+            </div>
+        </div>
+        <button id="creataOrder" type="submit" class="btn btn-primary mb-3">Подтвердить</button>
+  </div>
+        
     <footer class="text-start text-lg-start bg-light text-muted footer-top-border">
       <div class="p-4" style="background-color: rgba(0, 0, 0, 0.05);">
         © 2023 - Delivery.Кушац
@@ -65,7 +87,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js"></script>
     <script src="C:\Users\kfk55\.vscode\WebFront-Hits-frontend-project-1\Backet\basketScript.js"></script>
-    <script src="C:\Users\kfk55\.vscode\WebFront-Hits-frontend-project-1\Scripts\getCookie.js"></script>
+    <script src="C:\Users\kfk55\.vscode\WebFront-Hits-frontend-project-1\Orders\cofimOrderScript.js"></script>
+    <script src="C:\Users\kfk55\.vscode\WebFront-Hits-frontend-project-1\Profile\loginProfile.js"></script>
+    <script src="C:\Users\kfk55\.vscode\WebFront-Hits-frontend-project-1\Registration\adressScript.js"></script>
   </body>
 </html>
-

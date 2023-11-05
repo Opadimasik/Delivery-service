@@ -1,5 +1,5 @@
 // тестовый токен, потом передавать его 
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJhYmJjNWQ4YS1jYjU4LTRjMjYtOTA5ZC0wOGRiZDZhNzIxYjkiLCJuYW1lIjoibmFtZS5zdXJuYW1lQGRvbWFpbi5jb20iLCJlbWFpbCI6Im5hbWUuc3VybmFtZUBkb21haW4uY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvYXV0aGVudGljYXRpb24iOiI1MGQ5ZDJmYi0zYzMyLTQ2ZjgtYjAxYS1iNjgxODI1NTA3ODQiLCJuYmYiOjE2OTg5NDIxODEsImV4cCI6MTY5ODk0NTc4MSwiaWF0IjoxNjk4OTQyMTgxLCJpc3MiOiJEZWxpdmVyeS5BcGkiLCJhdWQiOiJEZWxpdmVyeS5BcGkifQ.6Q_lmkqmvW6b5C4VenNHtwTmAbFzOJkFUzPELgDzH1M";
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJhYmJjNWQ4YS1jYjU4LTRjMjYtOTA5ZC0wOGRiZDZhNzIxYjkiLCJuYW1lIjoibmFtZS5zdXJuYW1lQGRvbWFpbi5jb20iLCJlbWFpbCI6Im5hbWUuc3VybmFtZUBkb21haW4uY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvYXV0aGVudGljYXRpb24iOiIxNmNmNDQ4My03NjRmLTQzZDMtYjAyOC1iMjA3ZGU5OGM3MDEiLCJuYmYiOjE2OTkxOTgyMzgsImV4cCI6MTY5OTIwMTgzOCwiaWF0IjoxNjk5MTk4MjM4LCJpc3MiOiJEZWxpdmVyeS5BcGkiLCJhdWQiOiJEZWxpdmVyeS5BcGkifQ.13GCsDIwKmBOfd2WR0Q6hghVTFN0WVNbIugFtP61SiE";
 const productContainer = document.getElementById("product-container");
 function deleteProduct(dishId, cardElement) {
 
@@ -30,29 +30,34 @@ function deleteProduct(dishId, cardElement) {
 function createBasket (products)
 {
     
-    products.forEach(product => {
-        const card = document.createElement("div");
-        card.classList.add("col-md-4");
-        card.innerHTML = `
-            <div class="card" product-id="${product.id}" style="width: 18rem;">
-                <img src="${product.image}" class="card-img-top" alt="${product.name}">
-                <div class="card-body">
-                    <h5 class="card-title">${product.name}</h5>
-                    <p class="card-text">Цена: ${product.price}</p>
-                    <p class="card-text">Общая стоимость: <span class="product-total-price">${product.totalPrice}</span></p>
-                    <p class="card-text">Количество: <span class="product-amount">${product.amount}</span></p>
-                    <button class="btn btn-secondary decrement">-</button>
-                    <button class="btn btn-secondary increment">+</button>
-                    <a href="#" class="btn btn-danger delete-product">Удалить</a>
-                </div>
-            </div>
-        `;
-
-        productContainer.appendChild(card); 
-        const decrementButton = card.querySelector(".decrement");
-        const incrementButton = card.querySelector(".increment");
-        const amountElement = card.querySelector(".product-amount");
-        const totalPriceElement = card.querySelector(".product-total-price");
+    products.forEach(item => {
+      const itemRow = document.createElement("div");
+      itemRow.classList.add("row", "border", "border-dark", "p-2");
+      itemRow.setAttribute("product-id", item.id); // Устанавливаем атрибут product-id
+      itemRow.innerHTML = `
+          <div class="col-2 border-end">
+              <img src="${item.image}" alt="${item.name}" style="max-width: 100%; height: auto;">
+          </div>
+          <div class="col-4 border-end">
+              <div>${item.name}</div>
+              <div class="text" style="font-size: 12px;">Наименование</div>
+          </div>
+          <div class="col-2 border-end">
+              <div>${item.price}</div>
+              <div class="text" style="font-size: 12px;">Цена</div>
+          </div>
+          <div class="col-2 border-end">
+              <div>${item.amount}</div>
+              <div class="text" style="font-size: 12px;">Количество</div>
+          </div>
+          <div class="col-2">
+              <div>${item.totalPrice}</div>
+              <div class="text" style="font-size: 12px;">Итого</div>
+          </div>
+      `;
+      
+      // Добавьте созданный элемент куда вам нужно
+      productContainer.appendChild(itemRow);
 
         decrementButton.addEventListener("click", () => {
             let amount = parseInt(amountElement.textContent);

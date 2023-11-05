@@ -1,5 +1,6 @@
 // Элементы формы
 var emailField = document.getElementById('staticEmail');
+var phoneFieldStatic = document.getElementById('staticPhone');
 var fullNameField = document.getElementById('exampleFormControlInput1');
 var phoneField = document.getElementById('phone');
 var genderField = document.getElementById('staticGender');
@@ -9,7 +10,7 @@ var address = document.getElementById('address-section-main');
 const saveButton = document.getElementById('saveButton');
 data = 
 {
-  token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJhYmJjNWQ4YS1jYjU4LTRjMjYtOTA5ZC0wOGRiZDZhNzIxYjkiLCJuYW1lIjoibmFtZS5zdXJuYW1lQGRvbWFpbi5jb20iLCJlbWFpbCI6Im5hbWUuc3VybmFtZUBkb21haW4uY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvYXV0aGVudGljYXRpb24iOiJjOTYzMjQxOC1mMzQ0LTQ2YzEtOWFlYy05ZmRmMmQ5NDUzOGQiLCJuYmYiOjE2OTg5MDQyMDMsImV4cCI6MTY5ODkwNzgwMywiaWF0IjoxNjk4OTA0MjAzLCJpc3MiOiJEZWxpdmVyeS5BcGkiLCJhdWQiOiJEZWxpdmVyeS5BcGkifQ.U58QE76pEjMrW7tCWh6RSkoYQO3Jxt9K_FTzt_9awrw"
+  token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJhYmJjNWQ4YS1jYjU4LTRjMjYtOTA5ZC0wOGRiZDZhNzIxYjkiLCJuYW1lIjoibmFtZS5zdXJuYW1lQGRvbWFpbi5jb20iLCJlbWFpbCI6Im5hbWUuc3VybmFtZUBkb21haW4uY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvYXV0aGVudGljYXRpb24iOiIxNmNmNDQ4My03NjRmLTQzZDMtYjAyOC1iMjA3ZGU5OGM3MDEiLCJuYmYiOjE2OTkxOTgyMzgsImV4cCI6MTY5OTIwMTgzOCwiaWF0IjoxNjk5MTk4MjM4LCJpc3MiOiJEZWxpdmVyeS5BcGkiLCJhdWQiOiJEZWxpdmVyeS5BcGkifQ.13GCsDIwKmBOfd2WR0Q6hghVTFN0WVNbIugFtP61SiE"
 }
 // Функция для выполнения GET-запроса и обновления данных на странице
 function updateProfileData() {
@@ -36,6 +37,7 @@ function updateProfileData() {
         emailField.value = data.email;
         fullNameField.value = data.fullName;
         phoneField.value = data.phoneNumber;
+        phoneFieldStatic.value = data.phoneNumber;
         address.value = data.address;
         if(data.gender === "Male")
         {

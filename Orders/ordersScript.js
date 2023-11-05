@@ -1,10 +1,14 @@
+
+const tokenGetFromCookkie = getCookie('token');
+console.log(tokenGetFromCookkie);
+if (tokenGetFromCookkie !== null) {
 data = 
 {
-    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJhYmJjNWQ4YS1jYjU4LTRjMjYtOTA5ZC0wOGRiZDZhNzIxYjkiLCJuYW1lIjoibmFtZS5zdXJuYW1lQGRvbWFpbi5jb20iLCJlbWFpbCI6Im5hbWUuc3VybmFtZUBkb21haW4uY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvYXV0aGVudGljYXRpb24iOiI0NjQyZTk3NC05NjQyLTQ0MzktODE4OC0xZWE2YTAwOWNlZWEiLCJuYmYiOjE2OTkwOTgwMDUsImV4cCI6MTY5OTEwMTYwNSwiaWF0IjoxNjk5MDk4MDA1LCJpc3MiOiJEZWxpdmVyeS5BcGkiLCJhdWQiOiJEZWxpdmVyeS5BcGkifQ.UkOC9uUFAXk_Tq4Or709CVD4aIMvRYJeGd_QYp4pJD4"
+    token: tokenGetFromCookkie
 }
 
 const url = "https://food-delivery.kreosoft.ru/api/order";
-const token = "Bearer " + data.token;
+var token = "Bearer " + data.token;
 const options = {
     method: "GET",
     headers: {
@@ -51,3 +55,4 @@ fetch(url, options)
     .catch(error => {
         console.error("Ошибка при получении данных:", error);
     });
+}
